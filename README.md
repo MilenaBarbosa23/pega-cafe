@@ -9,7 +9,7 @@ Jogo Web no estilo Infinite Runner onde o jogador precisa pular obstáculos (o c
 - JavaScript (Puro)
 ## Instalação e Execução
 O jogo não requer instalação e roda diretamente no navegador. 
-Acesse a versão publicada no GitHub Pages através do link: **[COLE O LINK DO SEU GITHUB PAGES AQUI]**
+Acesse a versão publicada no GitHub Pages através do link: https://milenabarbosa23.github.io/pega-cafe/
 
 ## Regras do Jogo
 1. O jogo inicia ao clicar no botão "Iniciar Partida".
