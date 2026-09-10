@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pega Café</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Pega Café ☕</h1>
+        <p class="instructions">Pressione <strong>Espaço</strong>, <strong>Seta para Cima</strong> ou <strong>Clique</strong> para pular. Colete café para sobreviver ao expediente!</p>
+        
+        <div id="game-board">
+            <div id="score-display">Cafés: <span id="score">0</span></div>
+            
+            <div id="player">🏃</div>
+            <div id="obstacle">💤</div> 
+            <div id="coffee">☕</div>
+
+            <div id="start-screen" class="overlay">
+                <button id="start-btn">Iniciar Partida</button>
+            </div>
+            
+            <div id="game-over-screen" class="overlay hidden">
+                <h2>Você ficou sem energia!</h2>
+                <p>Total de Cafés: <span id="final-score">0</span></p>
+                <button id="restart-btn">Tentar Novamente</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

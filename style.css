@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+}
+
+body {
+    /* Gradiente alegre e moderno */
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #2d3436;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #ff6b81;
+    margin-bottom: 5px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.instructions {
+    margin-bottom: 25px;
+    color: #636e72;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Tabuleiro com efeito Glassmorphism (Vidro Fosco) */
+#game-board {
+    width: 650px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    border-bottom: 15px solid rgba(136, 216, 176, 0.9); /* Chão moderno */
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+#score-display {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #2d3436;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+#player, #obstacle, #coffee {
+    position: absolute;
+    user-select: none;
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2)); /* Sombra nos emojis */
+}
+
+#player {
+    font-size: 50px;
+    bottom: 0px;
+    left: 50px;
+}
+
+.jump {
+    /* Curva de animação mais suave e natural */
+    animation: jump-anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes jump-anim {
+    0% { bottom: 0; }
+    40% { bottom: 140px; }
+    50% { bottom: 140px; }
+    60% { bottom: 140px; }
+    100% { bottom: 0; }
+}
+
+#obstacle {
+    font-size: 45px;
+    bottom: 0px;
+    right: -60px;
+    display: none;
+}
+
+.move-obstacle {
+    animation: obstacle-anim 1.5s infinite linear;
+}
+
+@keyframes obstacle-anim {
+    0% { right: -60px; }
+    100% { right: 700px; }
+}
+
+#coffee {
+    font-size: 35px;
+    bottom: 70px;
+    right: -60px;
+    display: none;
+}
+
+.move-coffee {
+    animation: coffee-anim 2.2s infinite linear;
+}
+
+@keyframes coffee-anim {
+    0% { right: -60px; }
+    100% { right: 700px; }
+}
+
+/* Telas de sobreposição em vidro */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    border-radius: 15px 15px 0 0;
+}
+
+.overlay h2 {
+    font-size: 2.2rem;
+    color: #ff4757;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.overlay p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2f3542;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Botões Modernos e Interativos */
+button {
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 800;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.4);
+}
